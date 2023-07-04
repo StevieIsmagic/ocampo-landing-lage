@@ -1,36 +1,36 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
-import Bridge from '../components/Icons/Bridge'
-import Logo from '../components/Icons/Logo'
-import Modal from '../components/Modal'
+// import Link from 'next/link'
+// import { useRouter } from 'next/router'
+// import { useEffect, useRef } from 'react'
+// import Bridge from '../components/Icons/Bridge'
+// import Logo from '../components/Icons/Logo'
+// import Modal from '../components/Modal'
 import cloudinary from '../utils/cloudinary'
 import getBase64ImageUrl from '../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../utils/types'
-import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
+// import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
-  const router = useRouter()
-  const { photoId } = router.query
-  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
+  // const router = useRouter()
+  // const { photoId } = router.query
+  // const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto()
 
-  const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null)
+  // const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null)
 
-  useEffect(() => {
-    // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
-    if (lastViewedPhoto && !photoId) {
-      lastViewedPhotoRef.current.scrollIntoView({ block: 'center' })
-      setLastViewedPhoto(null)
-    }
-  }, [photoId, lastViewedPhoto, setLastViewedPhoto])
+  // useEffect(() => {
+  //   // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
+  //   if (lastViewedPhoto && !photoId) {
+  //     lastViewedPhotoRef.current.scrollIntoView({ block: 'center' })
+  //     setLastViewedPhoto(null)
+  //   }
+  // }, [photoId, lastViewedPhoto, setLastViewedPhoto])
 
   return (
     <>
       <Head>
-        <title>Next.js Conf 2022 Photos</title>
+        <title>MEET THE OCAMPO FAMILY</title>
         <meta
           property="og:image"
           content="https://nextjsconf-pics.vercel.app/og-image.png"
@@ -41,23 +41,19 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
-        {photoId && (
-          <Modal
-            images={images}
-            onClose={() => {
-              setLastViewedPhoto(photoId)
-            }}
-          />
-        )}
+        <header className=" mx-auto max-w-[1900px] text-center text-white/80 p-12 text-2xl">THE OCAMPO FAMILY</header>
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
+          <div className="absolute inset-0 flex space-x-40 space-y-10">
+          </div>
 
           {images.map(({ id, public_id, format, blurDataUrl }) => (
-            <Link
+            <a
+              // href={`/?photoId=${id}`}
+              // as={`/p/${id}`}
+              // ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
+              // shallow
               key={id}
-              href={`/?photoId=${id}`}
-              as={`/p/${id}`}
-              ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
-              shallow
+              href={`https://www.steven.ocampo.io`}
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
               <Image
@@ -74,12 +70,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   (max-width: 1536px) 33vw,
                   25vw"
               />
-            </Link>
+
+            </a>
           ))}
         </div>
       </main>
       <footer className="p-6 text-center text-white/80 sm:p-12">
-        Thank you to{' '}
+        Praise be to {' '}
         <a
           href="https://ocampo.io"
           target="_blank"
