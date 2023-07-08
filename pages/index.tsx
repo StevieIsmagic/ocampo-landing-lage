@@ -30,7 +30,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   return (
     <>
       <Head>
-        <title>MEET THE OCAMPO FAMILY</title>
+        {/* This is displayed on the browser tab */}
+        <title>THE OCAMPO FAMILY</title>
         <meta
           property="og:image"
           content="https://ocampo.io/og-image-1.png"
@@ -41,7 +42,22 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
-        <header className=" mx-auto max-w-[1900px] text-center text-white/80 p-12 text-2xl">THE OCAMPO FAMILY</header>
+        {/* This text is displayed on the main html landing page */}
+        <header className="mx-auto max-w-[1900px] text-center text-white/80 p-12 text-2xl">
+          <Image
+            className="mx-auto max-w-[1900px] text-center text-2xl"
+            alt="Colombian Flag"
+            width={62}
+            height={38}
+            src={`/apple-touch-icon.png`}
+            sizes="(max-width: 640px) 100vw,
+                  (max-width: 1280px) 50vw,
+                  (max-width: 1536px) 33vw,
+                  25vw"
+          />
+          ~ MEET THE OCAMPO FAMILY ~
+          <h1> One line family bio</h1>
+        </header>
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
           <div className="absolute inset-0 flex space-x-40 space-y-10">
           </div>
@@ -57,7 +73,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
               <Image
-                alt="Ocampo family member headshot"
+                alt="Ocampo Family Member Headshot"
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{ transform: 'translate3d(0, 0, 0)' }}
                 placeholder="blur"
@@ -70,7 +86,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   (max-width: 1536px) 33vw,
                   25vw"
               />
-
+              <h1 className="inset-0 text-white/75 flex justify-center text-2xl font-semibold">
+                {"Elizabeth Ocampo"}</h1>
+              <h3 className="inset-0 text-white/75 flex justify-center font-semibold">{"One line member bio"}</h3>
             </a>
           ))}
         </div>
