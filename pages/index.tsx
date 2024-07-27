@@ -31,7 +31,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     <>
       <Head>
         {/* This is displayed on the browser tab */}
-        <title>What do you call a writer who doesn't write?</title>
+        <title>Ocampo</title>
         <meta
           property="og:image"
           content="https://ocampo.io/og-image-1.png"
@@ -55,8 +55,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   (max-width: 1536px) 33vw,
                   25vw"
           />
-          ~ What do you call ~
-          <h1> One line family bio</h1>
+          What do you call a writer who doesn't write?
+          {/* <h1> One line family bio</h1> */}
         </header>
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
           <div className="absolute inset-0 flex space-x-40 space-y-10">
