@@ -70,8 +70,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               // shallow
               // key={id}
               href={`https://www.steven.ocampo.io`}
-              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
-            >
+              className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight">
+            <div>
               <Image
                 alt="Ocampo Family Member Headshot"
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
@@ -82,12 +82,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 width={720}
                 height={480}
                 sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
+                (max-width: 1280px) 50vw,
+                (max-width: 1536px) 33vw,
+                25vw"
+                />
               <h1 className="inset-0 text-white/75 flex justify-center text-2xl font-semibold">
                 {"Elizabeth Ocampo"}</h1>
+            </div>
               {/* <h3 className="inset-0 text-white/75 flex justify-center font-semibold">{"One line member bio"}</h3> */}
             </a>
 
