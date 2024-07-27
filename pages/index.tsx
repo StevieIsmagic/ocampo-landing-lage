@@ -31,7 +31,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     <>
       <Head>
         {/* This is displayed on the browser tab */}
-        <title>THE OCAMPO FAMILY</title>
+        <title>What do you call a writer who doesn't write?</title>
         <meta
           property="og:image"
           content="https://ocampo.io/og-image-1.png"
@@ -55,7 +55,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                   (max-width: 1536px) 33vw,
                   25vw"
           />
-          ~ MEET THE OCAMPO FAMILY ~
+          ~ What do you call ~
           <h1> One line family bio</h1>
         </header>
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
