@@ -62,13 +62,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <div className="absolute inset-0 flex space-x-40 space-y-10">
           </div>
 
-          {images.map(({ id, public_id, format, blurDataUrl }) => (
+
             <a
               // href={`/?photoId=${id}`}
               // as={`/p/${id}`}
               // ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               // shallow
-              key={id}
+              // key={id}
               href={`https://www.steven.ocampo.io`}
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
             >
@@ -77,8 +77,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{ transform: 'translate3d(0, 0, 0)' }}
                 placeholder="blur"
-                blurDataURL={blurDataUrl}
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
+                // blurDataURL={blurDataUrl}
+                src={'og-image-1.png'}
                 width={720}
                 height={480}
                 sizes="(max-width: 640px) 100vw,
@@ -88,9 +88,9 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
               />
               <h1 className="inset-0 text-white/75 flex justify-center text-2xl font-semibold">
                 {"Elizabeth Ocampo"}</h1>
-              <h3 className="inset-0 text-white/75 flex justify-center font-semibold">{"One line member bio"}</h3>
+              {/* <h3 className="inset-0 text-white/75 flex justify-center font-semibold">{"One line member bio"}</h3> */}
             </a>
-          ))}
+
         </div>
       </main>
       <footer className="p-6 text-center text-white/80 sm:p-12">
